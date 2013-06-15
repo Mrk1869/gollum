@@ -19,7 +19,8 @@ class String
   # _Header => header which causes errors
   def to_url
     return nil if self.nil?
-    upstream_to_url :exclude => ['_Header', '_Footer', '_Sidebar']
+    return self if ['_Header', '_Footer', '_Sidebar'].include? self
+    self
   end
 end
 
@@ -243,7 +244,8 @@ module Precious
         wiki.write_page(name, format, params[:content], commit_message, path)
 
         page_dir = settings.wiki_options[:page_file_dir].to_s
-        redirect to("/#{clean_url(::File.join(page_dir, path, name))}")
+        #redirect to("/#{clean_url(::File.join(page_dir, path, name))}")
+        redirect to("/#{clean_url(encodeURIComponent(::File.join(path,name)))}")
       rescue Gollum::DuplicatePageError => e
         @message = "Duplicate page: #{e.message}"
         mustache :error
