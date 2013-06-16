@@ -46,9 +46,9 @@ module Precious
     Browser = Struct.new(:browser, :version)
 
     @@min_ua = [
-        Browser.new('Internet Explorer', '10.0'),
-        Browser.new('Chrome', '7.0'),
-        Browser.new('Firefox', '4.0'),
+        #Browser.new('Internet Explorer', '10.0'),
+        #Browser.new('Chrome', '7.0'),
+        #Browser.new('Firefox', '4.0'),
     ]
 
     def supported_useragent?(user_agent)
