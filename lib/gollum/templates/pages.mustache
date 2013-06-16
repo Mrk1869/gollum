@@ -2,14 +2,10 @@
 <div id="head" style="border:none;">
   <h1>{{title}}</h1>
   <ul class="actions">
-    <li class="minibutton">
-      {{>searchbar}}
-    </li>
-    <li class="minibutton"><a href="{{base_url}}/"
-       class="action-home-page">Home</a></li>
-    <li class="minibutton jaws">
-    <a href="#" id="minibutton-new-page">New</a>
-    </li>
+<!--    <li class="minibutton">{{>searchbar}}</li> -->
+    <li><a href = "{{base_url}}/"><button class = "btn btn-info">Home</button></a></li>
+    <li><a href = "{{base_url}}/pages"><button class = "btn btn-info">All</button></a></li>
+    <li><a href = "#"><button class = "btn btn-info" id = "minibutton-new-page">New</button></a></li>
   </ul>
 </div>
 <div id="pages">
